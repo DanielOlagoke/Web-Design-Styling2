@@ -1,0 +1,254 @@
+/* General Page Background */
+body {
+    background-color: #FFFDD0; /* Cream */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+.header {
+    background-color: #FFFDD0; /* stays cream to match */
+    text-align: center;
+    padding: 30px 0;
+}
+
+.H1-header {
+    margin: 0;
+    font-size: 40px;
+    color: #5A001E; /* Dark wine text for good contrast */
+}
+
+
+.subtitle {
+    margin-top: 5px;
+    font-size: 18px;
+    color:whitesmoke;
+    animation: boldPulse 2s infinite;
+    color: #fff;
+    animation: glowAnim 2.5s ease-in-out infinite;
+    
+}
+
+@keyframes boldPulse {
+  0%   { font-weight: 300; opacity: 0.7; }
+  50%  { font-weight: 900; opacity: 1; }
+  100% { font-weight: 300; opacity: 0.7; }
+
+}
+
+
+@keyframes glowAnim {
+  0% {
+    text-shadow: 0 0 5px #fff;
+    opacity: 0.7;
+  }
+  50% {
+    text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+    opacity: 1;
+  }
+  100% {
+    text-shadow: 0 0 5px #fff;
+    opacity: 0.7;
+  }
+}
+
+
+
+/* Main Section Background */
+.main_section {
+    position: relative;
+    height: 2vh;
+    background-color: #722F37; /* Wine fallback color */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: slideBackground 18s infinite; /* automatic image change */
+    padding: 400px 0;  /* keeps your original padding */
+    margin-bottom: 0;  /* fixed small syntax issue (removed % sign) */
+}
+
+/* Background image slide animation */
+@keyframes slideBackground {
+    0%   { background-image: url('car1.jpg'); }
+    33%  { background-image: url('car2.jpg'); }
+    66%  { background-image: url('car3.png'); }
+    100% { background-image: url('car4.avif'); }
+}
+
+
+
+/* Container for Frames */
+.body_frame {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Each Box (sub frame) */
+.sub_frame {
+  position: relative;
+  padding: 25px;
+  width: 400px;
+  height: 120px;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+  background: transparent;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Rainbow animated border */
+.sub_frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 3px; /* border thickness */
+  border-radius: 12px;
+
+  /* Rainbow */
+  background: linear-gradient(
+    45deg,
+    red,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    violet,
+    red
+  );
+  background-size: 400% 400%;
+  animation: rainbowMove 6s linear infinite;
+
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  /* Mask — removes inside, keeps border only */
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+
+  z-index: -1;
+}
+
+/* Transparent inside (optional – can be removed completely) */
+.sub_frame::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.0); /* fully transparent */
+  z-index: -2;
+}
+
+@keyframes rainbowMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+
+/* View Button */
+.btn_enter {
+    margin-top: 15px;
+    padding: 12px 25px;
+    background-color: white;
+    color: #2E8B57;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn_enter:hover {
+    background-color: #1f6a43;
+    color: white;
+}
+
+/* Footer */
+footer {
+    background-color: #FFFDD0;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 0px;
+}
+
+.footer_container {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.footer_section {
+    text-align: center;
+    margin-right: auto;
+  margin-left: 10px;
+}
+
+
+
+.footer_section a {
+    text-decoration: none;
+    color: #5A001E;
+    text-align: left;
+}
+
+
+
+.footer_section a:hover {
+    text-decoration: underline;
+}
+
+.sub_headers {
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.info {
+    text-align: left;
+    margin-left: 5%;
+}
+
+
+
+.footer_section_1 {
+  margin-right: auto;
+  margin-left: 6px;
+}
+
+/* Copyright */
+.copyright {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #5A001E;
+}
+
+.footer_section i {
+    margin-right: 5px;
+    text-align: left;
+    
+}
+
+
+.contact_p {
+    text-align: left;
+}
+
+
+#follow_us {
+   margin-top: 10%;
+}
+
+#car_subtitle {
+     margin-top: 5px;
+    font-size: 18px;
+    color:white#5A001E;
+}
